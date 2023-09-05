@@ -1,0 +1,40 @@
+.footer {
+    background-color: cl(navy);
+    .footer-inner {
+        text-align: center;
+    }
+    .footer-nav {
+
+    }
+    .footer-list {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0 10px;
+        text-align: center;
+        @include tabletView {
+            display: block;
+        }
+    }
+    .footer-item {
+        +.footer-item {
+            padding-left: 40px;
+            @include tabletView {
+                padding-left: 0;
+            }
+        }
+        a {
+            font-size: 1.4rem;
+            color: cl(white);
+            @include tabletView {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .footer-copy {
+        font-size: 1.2rem;
+        color: cl(white);
+        @include tabletView {
+            font-size: .2rem;
+        }
+    }
+}

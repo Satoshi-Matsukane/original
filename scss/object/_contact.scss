@@ -1,0 +1,97 @@
+.contact-section {
+    background-image: url(../img/contact/contact.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.5);
+        z-index: -1;
+    }
+    .contact-list {
+        padding-top: 100px;
+        margin: 0 auto;
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        padding: 9% 0;
+        @include tabletView {
+            display: block;
+            width: 100%;
+            padding: 20px;
+        }
+    }
+    .contact-item {
+        padding-top: 20px;
+        .contact-link {
+            width: 400px;
+            position: relative;
+            border: 5px solid cl(white);
+            padding: 30px;
+            overflow: visible;
+            margin: 0 auto;
+            @include tabletView {
+                width: 90%;
+                padding: 20px;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: calc(50% - 5px);
+                right: -35px;
+                transform: rotate(20deg);
+                width: 20px;
+                height: 1px;
+                background-color: cl(white);
+                transition: right 0.3s;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -35px;
+                transform: translateY(-50%);
+                width: 120px;
+                height: 1px;
+                background-color: cl(white);
+                transition: right 0.3s;
+            }
+            &:hover {
+                &::before {
+                    right: -60px;
+                    transition: right .3s;
+                }
+                &::after {
+                    right: -60px;
+                    transition: right .3s;
+                }
+            }
+
+            .contact-title {
+                color: cl(white);
+                padding-bottom: 20px;
+                line-height: 1.2;
+                .en-title {
+                    font-size: 3.5rem;
+                    display: block;
+                    @include tabletView {
+                        font-size: 2rem;
+                    }
+                }
+                .ja-title {
+                    font-size: 1.8rem;
+                    @include tabletView {
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}

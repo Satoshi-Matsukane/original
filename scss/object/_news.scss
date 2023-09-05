@@ -1,0 +1,50 @@
+.news-section {
+    background-color: cl(grey);
+    .news-content {
+        padding: 0 20px;
+    }
+    .news-list {
+        max-width: 700px;
+        margin: 30px auto 40px;
+        @include tabletView {
+            width: 100%;
+        }
+    }
+    .news-item {
+            display: flex;
+            align-items: center;
+            @include tabletView {
+                display: block;
+            }
+        +.news-item {
+            padding-top: 20px;
+        }
+        .news-tag {
+            background-color: #004EFF;
+            color: #fff;
+            padding: 5px 20px;
+            margin-right: 40px;
+            font-size: 1.4rem;
+            @include tabletView {
+                padding: 2px;
+                margin-right: 10px;
+                font-size: 1rem;
+                width: 20%;
+                text-align: center;
+            }
+        }
+        .news-link {
+            color: cl(black);
+            text-decoration: underline;
+            &:hover {
+                color: cl(orange);
+            }
+        }
+        .news-text {
+
+        }
+        .text-limit {
+
+        }
+    }
+}

@@ -1,0 +1,76 @@
+.faq-section {
+    .faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0;
+        @include tabletView {
+            width: 100%;
+        }
+    }
+    .faq-item {
+        .faq-title {
+            position: relative;
+            display: block;
+            padding: 20px 0;
+            border-bottom: 1px solid #363535;
+            border-radius: 3px;
+            color: cl(black);
+            padding-left: 15px;
+            @include tabletView {
+                font-size: 1.5rem;
+            }
+            &:after {
+                content: "";
+                border-top: 2px solid cl(black);
+                border-left: 2px solid cl(black);
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                transform: rotate(-135deg) translateY(9px);
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                @include tabletView {
+                    display: none;
+                }
+            }
+            &.is-open {
+                &::after {
+                    transform: rotate(45deg) translateY(-10px);
+                }
+            }
+
+            &:hover {
+                color: cl(orange);
+            }
+            .faq-blue-font {
+                font-size: 2rem;
+                font-weight: bold;
+                color: cl(blue);
+            }
+        }
+
+        .faq-detail {
+            position: relative;
+            padding: 5px;
+            font-size: 1.5rem;
+            color: cl(darkgrey);
+            opacity: 0;
+            line-height: 0;
+            opacity: 0;
+            &.is-open {
+                padding: 20px 25px;
+                line-height: 1.5;
+                opacity: 1;
+            }
+            @include tabletView {
+                font-size: 1.4rem;
+            }
+            .faq-red-font {
+                font-size: 2rem;
+                font-weight: bold;
+                color: cl(red);
+            }
+        }
+    }
+}

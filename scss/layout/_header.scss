@@ -1,0 +1,79 @@
+.header {
+    position: fixed;
+    top:0;
+    left: 0; 
+    right:0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: cl(black);
+    padding: 2rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    .logo {
+        font-size: 2rem;
+        font-weight: bolder;
+        color: cl(white);
+        i {
+            padding-right: 1rem;
+            @include tabletView {
+                padding-right: .5rem;
+            }
+        }
+    }
+    .navbar {
+        @include tabletView {
+            position: absolute;
+            top:100%;
+            left: 0;
+            right:0;
+            background-color: rgba(0,0,0,.5);
+            border-top: .1rem solid rgba(0,0,0,.9);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            &.active {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+    }
+    .nav-list {
+        display: flex;
+        @include tabletView {
+            display: block;
+        }
+    }
+    .nav-item {
+        margin-left: 2rem;
+        @include tabletView {
+            margin-left: 0;
+        }
+        a {
+            margin-left: 2rem;
+            color: cl(white);
+            font-weight: bold;
+            &:hover {
+                color: cl(orange);
+            }
+            @include tabletView {
+                margin: 1.5rem;
+                padding:1.5rem;
+                display: block;
+                border:.2rem solid rgba(0,0,0,.1);
+                border-left:.5rem solid var(--red);
+                background: cl(black);
+            }
+        }
+    }
+    #menu-bar{
+        font-size: 3rem;
+        cursor: pointer;
+        color:cl(white);
+        border:.1rem solid cl(white);
+        border-radius: .3rem;
+        padding:.5rem 1.5rem;
+        display: none;
+        @include tabletView {
+            display: initial;
+        }
+    }
+}
+

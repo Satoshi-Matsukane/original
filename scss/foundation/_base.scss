@@ -1,0 +1,75 @@
+$colors: (
+	white: #fff,
+	black: #000,
+	navy: #161527,
+	text: #333333,
+    grey: #F3F3F4,
+	darkgrey: #484747,
+	lightgrey: #eaedf2,
+    red: #FF0000,
+	blue: #064ACB,
+	lightblue: #afcafc,
+	orange: #FFAE11,
+	green: #5bc8ac,
+	lightgreen: #b4f8e7,
+);
+
+@function cl($key) {
+	@return map-get($colors, $key);
+}
+
+// FONT
+// @inlcude TimesNewRoman;
+//--------------------------------------------------
+
+@mixin TimesNewRoman {
+	font-family: 'Inter','Noto Sans JP', sans-serif;;
+}
+
+// RESPONSIVE Tablet
+// @include pcView
+//--------------------------------------------------
+
+@mixin pcView  {
+	@media print, screen and (max-width: 1024px) {
+		@content;
+	}
+}
+
+
+// RESPONSIVE
+// @include tabletView 
+//--------------------------------------------------
+
+@mixin tabletView {
+	@media print,screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+// RESPONSIVE
+// @include mobileView 
+//--------------------------------------------------
+
+@mixin mobileView {
+	@media print,screen and (max-width: 450px) {
+		@content;
+	}
+}
+
+
+// UTILITY
+//--------------------------------------------------
+
+.pc-only {
+	@include pcView {
+		display: none;
+	}
+}
+
+.sp-only {
+	display: none;
+	@include tabletView() {
+		display: block;
+	}
+}

@@ -1,0 +1,74 @@
+.feature-section {
+    background-color: cl(grey);
+    .feature-content {
+        padding: 0px;
+        @include tabletView {
+            padding: 0 10px;
+        }
+    }
+    .feature-list {
+        padding-top: 30px;
+    }
+    .feature-item {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin:0 auto;
+        padding: 0 10px;
+        @include tabletView {
+            flex-direction: column-reverse;
+        }
+        +.feature-item {
+            padding-top: 50px
+        }
+        &:nth-child(even){
+            flex-direction: row;
+            @include tabletView {
+                flex-direction: column-reverse;
+            }
+        }
+        .feature-item_text {
+            box-sizing: border-box;
+            float: left;
+            width: 50%;
+            padding: 0 10px;
+            @include tabletView {
+                width: 100%;
+                padding: 0;
+                clear: both;
+            }
+        }
+        .feature-title {
+            font-weight: bold;
+            font-size: 2.4rem;
+            text-align: left;
+            padding: 10px 0 0;
+            @include tabletView {
+                font-size: 2rem;
+                text-align: center;
+                padding: 10px 0;
+            }
+        }
+        .feature-text {
+            padding: 10px 0 10px 0;
+            @include tabletView {
+                padding: 0px 0 10px 0;
+            }
+        }
+        .btn-link {
+            padding-top: 10px;
+        }
+        .feature-item_img {
+            float: left; 
+            box-sizing: border-box;
+            padding: 0px;
+            width: 50%;
+            padding: 0 10px;
+            @include tabletView {
+                width: 100%;
+                clear: both;
+                padding: 0px;
+            }
+        }
+    }
+}

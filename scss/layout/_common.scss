@@ -1,0 +1,114 @@
+.section-wrapper {
+    padding: 60px 0px;
+
+}
+
+.section-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    @include tabletView {
+        width: 100%;
+
+    }
+}
+
+.section-title {
+    text-align: center;
+    .en-title{
+        display: block;
+        font-size: 4.5rem;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+        @include tabletView {
+            font-size: 3.5rem;
+            margin-bottom: 0px;
+        }
+    }
+    .ja-title {
+        font-size: 1.6rem;
+        font-weight: normal;
+        @include tabletView {
+            font-size: 2rem;
+        }
+    }
+}
+
+.lines {
+    line-height: 2;
+}
+
+.btn-link {
+    cursor: pointer;
+    a {
+        position: relative;
+        color: cl(white);
+        font-weight: bold;
+        background-color: cl(orange);
+        font-size: 2rem;
+        width: 30rem;
+        height: 50px;
+        line-height: 50px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        @include tabletView {
+            width: 300px;
+            height: 50px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 50px;
+            transform: rotate(45deg) translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-width: 2px 2px 0 0;
+            border-style: solid;
+            border-color: cl(white);
+            transition: right .3s;
+        }
+        &:hover {
+            background: hsl(16,100%,50%);
+            transition: background 0.3s;
+        }
+
+        &:hover::after {
+            right: 30px;
+            transition: right .3s;
+        }
+    }
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+
+.fadein {
+    opacity: 0;
+}
+.scrollin {
+    animation-name: scrollin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+@keyframes scrollin {
+    0% {
+        opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    transform: translate(0);
+    }
+}
+
+
+.downup {
+    transform: translateY(50px);
+}
+
+.no-scroll {
+    overflow: hidden;
+}

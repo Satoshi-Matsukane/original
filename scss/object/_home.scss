@@ -1,0 +1,99 @@
+.home-section {
+    padding-top: 50px;
+    @include tabletView {
+        margin-top: 2%;
+    }
+    @include mobileView {
+        padding-top: 10%;
+    }
+    .box {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background-size: cover !important;
+        background-position: center !important;
+        @include tabletView {
+            min-height: 52vh;
+        }
+        @include mobileView {
+            min-height: 50vh;
+        }
+    }
+
+    .content{
+        text-align: center;
+        .main-copy{
+            font-size: 6rem;
+            color: #fff;
+            transition-delay: .2s;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px #333333;
+            @include tabletView {
+                padding-top: 10rem;
+                font-size: 3.5rem;
+            }
+        }
+
+        .sub-copy{
+            font-size: 4rem;
+            color: #fff;
+            transition-delay: .2s;
+            padding-bottom:  1rem;
+            text-shadow: 1px 1px 1px #333333;
+            @include tabletView {
+                font-size: 2rem;
+            }
+        }
+        .btn-link{
+            transition-delay: .6s;
+            width: 300px;
+            margin:  0 auto;
+        }
+    }
+
+    .slide-1 {
+        background-image: url(./img/mainvisal/fv-img01.png);
+    }
+
+    .content > * {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+
+    .swiper-slide-active {
+        .content > *{
+            transform: translateY(0rem);
+            opacity: 1;
+        }
+    }
+
+    .swiper-button-next {
+        right: 4rem;
+        color: #fff;
+        opacity: 0;
+    }
+    
+    .swiper-button-prev {
+        left: 4rem;
+        color: #fff;
+        opacity: 0;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        &:hover {
+            color: var(--main-color);
+        }
+    }
+    &:hover {
+        .swiper-button-next, .swiper-button-prev {
+            opacity: 1;
+        }
+    }
+
+}
+
+
+
+
+

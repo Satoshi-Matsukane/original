@@ -1,0 +1,59 @@
+*{
+    font-family: 'Inter', 'Noto Sans JP', sans-serif;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    transition: width none;
+    outline: none;
+    border: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    @include pcView {
+        html {
+            font-size: 55%;
+        }
+        .header {
+            padding: 2rem;
+        }
+        .header.active {
+            padding: 2rem;
+        }
+        .section-inner {
+            padding: 2rem;
+        }
+    }
+    @include mobileView {
+        html {
+            font-size: 50%;
+        }
+    }
+}
+
+body {
+    font-size: 1.6rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    overflow: hidden;
+}
+
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+li {
+    list-style: none;
+}
