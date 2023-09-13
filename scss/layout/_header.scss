@@ -7,16 +7,39 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: cl(black);
+    background-color: cl(blue);
     padding: 2rem 9%;
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    @include pcView {
+        .header {
+            padding: 2rem;
+        }
+        .header.active {
+            padding: 1rem;
+        }
+    }
+    @include tabletView {
+        padding: 1rem 2rem;
+    }
     .logo {
         font-size: 2rem;
         font-weight: bolder;
         color: cl(white);
         i {
             padding-right: 1rem;
+            color: #fbec17;
+            animation: floating 2s linear infinite;
+            @keyframes floating {
+                0%,100% {
+                    transform: translateY(0rem);
+                }
+                50% {
+                    transform: translateY(-1rem);
+                }
+            }
             @include tabletView {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
                 padding-right: .5rem;
             }
         }
@@ -59,7 +82,7 @@
                 display: block;
                 border:.2rem solid rgba(0,0,0,.1);
                 border-left:.5rem solid var(--red);
-                background: cl(black);
+                background: cl(blue);
             }
         }
     }
