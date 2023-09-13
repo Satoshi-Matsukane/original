@@ -1,10 +1,6 @@
 .home-section {
     padding-top: 50px;
     @include tabletView {
-        margin-top: 2%;
-    }
-    @include mobileView {
-        padding-top: 10%;
     }
     .box {
         min-height: 100vh;
@@ -15,13 +11,28 @@
         background-size: cover !important;
         background-position: center !important;
         @include tabletView {
-            min-height: 52vh;
+            min-height: 70vh;
         }
-        @include mobileView {
-            min-height: 50vh;
+
+    }
+    .slide-1 {
+        background: url(../img/mainvisial/fv-img01.jpg);
+        @include tabletView {
+            background: url(../img/mainvisial/fv-img01-sp.jpg);
         }
     }
-
+    .slide-2 {
+        background: url(../img/mainvisial/fv-img02.jpg);
+        @include tabletView {
+            background: url(../img/mainvisial/fv-img02-sp.jpg);
+        }
+    }
+    .slide-3 {
+        background: url(../img/mainvisial/fv-img03.jpg);
+        @include tabletView {
+            background: url(../img/mainvisial/fv-img03-sp.jpg);
+        }
+    }
     .content{
         text-align: center;
         .main-copy{
@@ -53,9 +64,6 @@
         }
     }
 
-    .slide-1 {
-        background-image: url(./img/mainvisal/fv-img01.png);
-    }
 
     .content > * {
         transform: translateY(2rem);
